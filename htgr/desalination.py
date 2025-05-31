@@ -18,7 +18,6 @@ Reference: Imperial College HTGR 5 / HR 5 Report, §3.3–3.4, §4
 
 import numpy as np
 
-
 # ── Baseline constants from group report ─────────────────────────────────────
 STEAM_FLOW_KGS    = 12.5          # kg/s steam to MED unit
 AVAILABILITY      = 0.95          # plant availability factor

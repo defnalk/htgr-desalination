@@ -13,7 +13,6 @@ Reference: Imperial College HTGR 5 / HR 5 Report, §3.2
 
 import numpy as np
 
-
 # ── Thermodynamic state points from the report ────────────────────────────────
 # Primary helium loop
 HE_STATES = {

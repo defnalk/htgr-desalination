@@ -16,10 +16,10 @@ desalination : MED performance metrics and water production calculator
 heat_rejection: Parasitic load and air-cooler module sizing
 """
 
-from .kinetics      import PointKinetics
-from .thermal_core  import ThermalCore
-from .power_cycles  import BraytonRankineCycle
-from .desalination  import MEDDesalination
+from .desalination import MEDDesalination
+from .kinetics import PointKinetics
+from .power_cycles import BraytonRankineCycle
+from .thermal_core import ThermalCore
 
 __all__ = [
     "PointKinetics",

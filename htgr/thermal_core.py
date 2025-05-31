@@ -18,7 +18,6 @@ Reference: Imperial College HTGR 5 / HR 5 Report, §2.2
 import numpy as np
 from scipy.integrate import solve_ivp
 
-
 # ── Default thermal parameters (from group report) ────────────────────────────
 DEFAULT_PARAMS = {
     # Thermal capacities (J/K)

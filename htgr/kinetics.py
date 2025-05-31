@@ -25,7 +25,6 @@ Reference: Imperial College HTGR 5 / HR 5 Report, §2.1
 import numpy as np
 from scipy.integrate import solve_ivp
 
-
 # ── U-235 delayed neutron parameters (6-group, IAEA standard) ────────────────
 BETA_I = np.array([0.00025, 0.00138, 0.00122, 0.00266, 0.00164, 0.00035])
 LAMBDA_I = np.array([0.0766, 0.2825, 0.6154, 1.634, 5.176, 16.72])
