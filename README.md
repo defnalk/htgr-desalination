@@ -131,10 +131,4 @@ The Helium Brayton cycle extracts work from 950 °C exhaust; the Steam Rankine b
 - HTTR design documentation (Japan Atomic Energy Agency)
 - Smith, Van Ness & Abbott — *Chemical Engineering Thermodynamics*
 - El-Dessouky & Ettouney — *Fundamentals of Salt Water Desalination*
-- Imperial College HTGR 5 / HR 5 Group Report (2026)
 
-## Authors
-
-**HTGR subteam:** Muhammad Dani, Michal Krasowski, Qiji Zhang, Clayton Yeung  
-**HR subteam:** Oscar Chan, Heidi Chong, Oliver Bush, Muhammad Abubakar, Luca Faillace  
-**Python port:** Defne Ertugrul — MEng Chemical Engineering, Imperial College London
