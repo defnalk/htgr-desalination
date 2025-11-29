@@ -2,7 +2,7 @@
 
 Python simulation of a scaled High-Temperature Gas-Cooled Reactor (HTGR) coupled to a hybrid Multi-Effect Distillation (MED) desalination complex.
 
-Based on the **Imperial College London HTGR 5 / HR 5 group design project (2026)** — a 300 MWth scaled HTTR reactor supplying zero-emission freshwater to 80,000 people while offsetting 267,000 tonnes of CO₂ per year.
+Based on the **Imperial College London HTGR / HR group design project (2026)** , a 300 MWth scaled HTTR reactor supplying zero-emission freshwater to 80,000 people while offsetting 267,000 tonnes of CO₂ per year.
 
 The original model was built in MATLAB/Simulink with Python (CoolProp) for real-gas helium properties. This repository ports the core physics into a clean Python package.
 
