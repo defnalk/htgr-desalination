@@ -1,5 +1,7 @@
 # htgr-desalination
 
+[![CI](https://github.com/defnalk/htgr-desalination/actions/workflows/ci.yml/badge.svg)](https://github.com/defnalk/htgr-desalination/actions/workflows/ci.yml)
+
 Python simulation of a scaled High-Temperature Gas-Cooled Reactor (HTGR) coupled to a hybrid Multi-Effect Distillation (MED) desalination complex.
 
 Based on the **Imperial College London HTGR / HR group design project (2026)** , a 300 MWth scaled HTTR reactor supplying zero-emission freshwater to 80,000 people while offsetting 267,000 tonnes of CO₂ per year.
