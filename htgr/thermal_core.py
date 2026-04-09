@@ -140,7 +140,12 @@ class ThermalCore:
             t_eval=t_eval,
             method="Radau",
             rtol=1e-6,
-            atol=1e-6,
+            # State variables are temperatures in Kelvin (~300–1500 K). An
+            # absolute tolerance of 1e-6 K is six orders of magnitude tighter
+            # than any physically meaningful precision and forces Radau to
+            # take needlessly small steps. Scale to ~1 mK, which is still
+            # well below any thermal-feedback resolution we care about.
+            atol=1e-3,
         )
 
         if not sol.success:
