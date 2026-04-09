@@ -127,6 +127,19 @@ class PointKinetics:
             Thermal power Q(t) in Watts.
         """
         if rho_func is None:
+            # Reject prompt-supercritical step inputs up front. Beyond β the
+            # ((ρ−β)/Λ)P term in the kinetics equation goes positive on the
+            # prompt-neutron timescale (Λ ≈ 1 ms), so the integrator faces
+            # an exponential blow-up that either crashes Radau or returns
+            # physically meaningless power values. Custom rho_func callers
+            # are trusted to know what they are doing.
+            if abs(rho_step) >= self.beta:
+                raise ValueError(
+                    f"rho_step={rho_step:+.4f} is at or beyond prompt "
+                    f"criticality (|ρ| ≥ β = {self.beta:.4f}); the point "
+                    "kinetics model is not valid in this regime."
+                )
+
             def rho_func(t):
                 return rho_step if t >= step_time else 0.0
 

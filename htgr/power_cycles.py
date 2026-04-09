@@ -86,6 +86,11 @@ class BraytonRankineCycle:
         self.eta_compressor = eta_compressor
         self.Q_reactor = Q_reactor
 
+    @staticmethod
+    def _dT_K(state_a, state_b) -> float:
+        """Temperature difference (K) between two HE_STATES entries."""
+        return float(HE_STATES[state_a]["T_C"] - HE_STATES[state_b]["T_C"])
+
     def he_turbine_work(self) -> float:
         """
         Net helium turbine work output.
@@ -97,10 +102,9 @@ class BraytonRankineCycle:
         float
             Net turbine work (W).
         """
-        T3 = HE_STATES[3]["T_C"] + 273.15   # K
-        T4 = HE_STATES[4]["T_C"] + 273.15   # K
-        W_turb = self.m_dot_He * self.Cp_He_avg * (T3 - T4) * self.eta_turbine
-        return W_turb
+        return (
+            self.m_dot_He * self.Cp_He_avg * self._dT_K(3, 4) * self.eta_turbine
+        )
 
     def he_compressor_work(self) -> float:
         """
@@ -113,9 +117,9 @@ class BraytonRankineCycle:
         float
             Compressor work (W). Positive = work input to system.
         """
-        T1 = HE_STATES[1]["T_C"] + 273.15
-        T2 = HE_STATES[2]["T_C"] + 273.15
-        return self.m_dot_He * self.Cp_He_avg * (T2 - T1) * self.eta_compressor
+        return (
+            self.m_dot_He * self.Cp_He_avg * self._dT_K(2, 1) * self.eta_compressor
+        )
 
     def net_brayton_work(self) -> float:
         """Net electrical output from the Brayton cycle (W)."""
