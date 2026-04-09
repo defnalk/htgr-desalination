@@ -129,10 +129,13 @@ class MEDDesalination:
         MWh_annual = self.P_elec_MWe * self.availability * 8760              # MWh/yr
         E_elec     = MWh_annual * CO2_GRID_T_MWH                              # t CO₂/yr
 
+        # Return unrounded floats so downstream consumers (lifecycle
+        # accumulation, plotting, scaling sweeps) keep precision. Pretty-
+        # printing in economic_summary applies its own formatting.
         return {
-            "desal_t_yr":  round(E_desal),
-            "elec_t_yr":   round(E_elec),
-            "total_t_yr":  round(E_desal + E_elec),
+            "desal_t_yr":  E_desal,
+            "elec_t_yr":   E_elec,
+            "total_t_yr":  E_desal + E_elec,
         }
 
     def co2_saved_lifecycle(self, years: int = 30) -> float:
@@ -195,9 +198,9 @@ class MEDDesalination:
             f"  Annual freshwater output: {V_annual/1e6:.2f} million m³/yr",
             f"  Population served       : ~{pop:,} people (@ 150 L/cap/day)",
             "-" * 58,
-            f"  CO₂ avoided (desal)     : {co2['desal_t_yr']:,} t/yr",
-            f"  CO₂ avoided (electricity): {co2['elec_t_yr']:,} t/yr",
-            f"  Total CO₂ avoided       : {co2['total_t_yr']:,} t/yr",
+            f"  CO₂ avoided (desal)     : {co2['desal_t_yr']:,.0f} t/yr",
+            f"  CO₂ avoided (electricity): {co2['elec_t_yr']:,.0f} t/yr",
+            f"  Total CO₂ avoided       : {co2['total_t_yr']:,.0f} t/yr",
             f"  30-year lifecycle saving : {co2_30yr:.1f} million t CO₂",
             "-" * 58,
             f"  Water price             : ${WATER_PRICE_M3}/m³",
