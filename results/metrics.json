@@ -1,0 +1,23 @@
+{
+  "config": "config/default.yaml",
+  "reactor": {
+    "P_peak_norm": 1.0000000000000078,
+    "P_peak_t_s": 197.3973973973974,
+    "Q_peak_MW": 300.00000000000233
+  },
+  "thermal": {
+    "Tf_peak_K": 4175.095595719513,
+    "Tm_peak_K": 2676.0317083271216,
+    "Tc_peak_K": 1421.9949208643702
+  },
+  "cycle_summary": "=======================================================\n  HTGR Combined Cycle Performance Summary\n=======================================================\n  Reactor thermal power    : 300.0 MWth\n  Helium flow rate         : 105.0 kg/s\n  Steam flow rate          : 12.5 kg/s\n-------------------------------------------------------\n  He Brayton net output    : -6.0 MWe\n  Steam Rankine output     : 9.8 MWe\n  Combined electrical      : 3.8 MWe\n  HRSG heat duty           : 39.1 MWth\n  Cycle thermal efficiency : 1.3%\n-------------------------------------------------------\n  Brayton Carnot (950\u2192650\u00b0C): 24.5%\n  Rankine Carnot (500\u219270\u00b0C) : 55.6%\n  Combined Carnot (950\u219270\u00b0C): 71.9%\n=======================================================",
+  "desal": {
+    "daily_production_m3": 11388.6,
+    "GOR": 11.1
+  },
+  "co2_avoided_t_yr": {
+    "desal_t_yr": 20784,
+    "elec_t_yr": 246331,
+    "total_t_yr": 267115
+  }
+}
