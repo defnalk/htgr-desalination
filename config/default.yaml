@@ -1,0 +1,19 @@
+# Reproducibility config for htgr-desalination.
+# Run: python -m htgr.cli --config config/default.yaml
+
+reactor:
+  Q_nominal_W: 3.0e8        # 300 MWth nominal thermal power
+  t_end_s: 400.0            # transient duration
+  reactivity_pcm: 300       # step reactivity insertion (pcm)
+  pulse_start_s: 100.0
+  pulse_end_s: 150.0
+
+desalination:
+  GOR: 11.1                 # gained-output-ratio for the MED train
+  availability: 0.95
+
+output:
+  results_dir: results
+  figure_name: htgr_simulation_results.png
+  metrics_name: metrics.json
+  random_seed: 0

@@ -66,6 +66,27 @@ print(f"Population served: {med.population_served():,} people")
 print(f"CO₂ avoided:       {med.co2_saved_annual()['total_t_yr']:,} t/yr")
 ```
 
+## Reproduce the Published Result (one command)
+
+All key parameters live in [`config/default.yaml`](config/default.yaml). To
+reproduce the figure and metrics in [`results/`](results/) from a fresh clone:
+
+```bash
+git clone https://github.com/defnalk/htgr-desalination.git
+cd htgr-desalination
+pip install -r requirements.txt
+python -m htgr.cli --config config/default.yaml
+```
+
+Outputs:
+
+- `results/metrics.json` — reactor transient peaks, thermal-core temperatures, cycle summary, desal production, CO₂ avoided
+- `results/htgr_simulation_results.png` — 4-panel summary figure
+
+To explore variations, copy `config/default.yaml`, edit any parameter
+(reactor power, reactivity insertion, MED GOR), and pass the new file via
+`--config`. No code changes required.
+
 ## Run the Full Simulation
 
 ```bash
