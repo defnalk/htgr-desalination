@@ -93,12 +93,18 @@ class MEDDesalination:
         ----------
         litres_per_capita_day : float
             Daily water demand per person (L/day). Default 150 (WHO standard).
+            Must be strictly positive.
 
         Returns
         -------
         int
             Number of people supplied.
         """
+        if litres_per_capita_day <= 0:
+            raise ValueError(
+                "litres_per_capita_day must be > 0 "
+                f"(got {litres_per_capita_day})"
+            )
         daily_litres = self.daily_production() * 1000  # m³ → litres
         return int(daily_litres / litres_per_capita_day)
 
